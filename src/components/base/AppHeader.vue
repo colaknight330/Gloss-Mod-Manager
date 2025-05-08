@@ -1,13 +1,14 @@
 <script lang='ts' setup>
-import { ipcRenderer } from 'electron'
+import { invoke } from '@tauri-apps/api/core';
+
 function handleMinimize() {
-    ipcRenderer.send('window-min')
+    invoke('minimize')
 }
 function handleMaximize() {
-    ipcRenderer.send('window-max')
+    invoke('toggle_maximize')
 }
 function handleClose() {
-    ipcRenderer.send('window-close')
+    invoke('close_window')
 }
 
 </script>

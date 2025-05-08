@@ -22,6 +22,3 @@ window.router = router;
 
 // app.use(ElementPlus, { size: 'small', zIndex: 3000 })
 app.mount('#app')
-    .$nextTick(() => {
-        postMessage({ payload: 'removeLoading' }, '*')
-    })

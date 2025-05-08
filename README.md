@@ -1,94 +1,16 @@
-# <center>Gloss Mod Manager </center>
+# Tauri + Vue + TypeScript
 
-<center> 
+这个模板可以帮助你开始使用Vue 3和TypeScript在Vite中进行开发。该模板使用Vue 3的`<script setup>` SFCs（单文件组件），查看[script setup文档](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup)了解更多信息。
 
-![][license] ![][author] ![][Vite] ![][Electron] ![][vue] ![][version]  [![][GitHub]](https://github.com/GlossMod/Gloss-Mod-Manager)
-</center> 
+## 推荐的IDE设置
 
----- 
+- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
 
-### Update address:
+## 对`.vue`导入的TS类型支持
 
-- Latest Version:  [GitHub](https://github.com/GlossMod/Gloss-Mod-Manager) | [3DM Mods](https://mod.3dmgame.com/mod/197445) | [Cloud](https://cloud.aoe.top/s/rmuL)
-- Docs: https://gmm.aoe.top
-- Feedback: [GitHub Issues](https://github.com/GlossMod/Gloss-Mod-Manager/issues)
+由于TypeScript无法处理`.vue`导入的类型信息，默认情况下它们被模拟为通用的Vue组件类型。在大多数情况下，如果你不太关心模板外的组件属性类型，这是没问题的。然而，如果你希望在`.vue`导入中获取实际的属性类型（例如，在使用手动`h(...)`调用时获取属性验证），你可以通过以下步骤启用Volar的接管模式：
 
-### What is it?
-Gloss Mod Manager (GMM) is a comprehensive modern game mod manager. It provides an easy and user-friendly way for gamers to manage and install various mods for games. It ensures safety, simplicity, ease of use, and hassle-free quick download, installation, and uninstallation of mods. Whether you are a newbie or an expert, using GMM will make your mod installation and management much easier and faster.
+1. 从VS Code的命令面板运行`Extensions: Show Built-in Extensions`，找到`TypeScript and JavaScript Language Features`，然后右键单击并选择`Disable (Workspace)`。默认情况下，如果默认的TypeScript扩展被禁用，接管模式将自动启用。
+2. 通过从命令面板运行`Developer: Reload Window`重新加载VS Code窗口。
 
-### How to use?
-- Download and install it,
-- Run `Gloss Mod Manager`.
-- Select the game that you want to play.
-- Enjoy!
-
-
-
-### Features
-- Adaptive language
-  - Automatically set the language of the manager according to the system language.
-- Adaptive theme 
-  - Determine which theme to use based on the system theme.
-- Simple UI
-  - No extra content or bloated ads.
-- Easy installation and download
-- Convenient browsing and downloading of mods
-- Comfortable animation
-- Virus-free and binding-free program
-- All features available for free
-- Backup Saves and Game files
-- Quick switch of game library
-
-### [Supported Games](https://gmm.aoe.top/en/SupportedGames.html)
-
-### Development Plan
-- [x] Design tool style and interface style.
-- [x] Complete the basic framework of the tool and create the function to browse mods.
-- [x] Add the function to download mods.
-- [x] Implement the function to install and manage mods.
-- [x] Adapt to some popular games.
-- [x] Automatic update check
-- [x] Implement the function of creating mod package
-    - This function still needs improvement.
-- [x] User login function
-    - APP scanning login & account password login
-- [x] Add the function to launch games and allow users to choose the game path.
-- [x] Multilingual internationalization, allowing users to switch the application language.
-- [x] Add the function to upload mod packages to the mod station.
-- [x] Automatic check of mod updates
-- [x] Implement the function of sorting mods, and allow users to customize the sorting method.
-- [ ] Automatically handle mod conflict issues
-
-
-### Help with Translation
-If you are willing to help us translate GMM into your language, you can do the following:
-
-- Click "Export language package" in [Settings](#/Settings).
-- The exported language pack will be in `My Documents\Gloss Mod Manager\lang`.
-- Copy a language you're familiar with (we prioritize Simplified Chinese and English language packs).
-- Rename it with your language code and add it to the `lang.json` file (be sure to follow the json format specifications).
-- Press `Ctrl + R` in the manager to reload the manager and see your text in the language list on the settings page.
-- Open `*.json` files with your favorite editor and translate.
-- You can always press `Ctrl + R` to reload the manager to immediately view the translation.
-- After completion, you can send the translated files to me via email at `mod@3dmgame.com` or `xm@aoe.top`. 
-- Remember to include the language you translated and your credit in the email.
-
-
-### Feedback
-- [GitHub](https://github.com/GlossMod/Gloss-Mod-Manager)
-- [Discord](https://discord.gg/76hmqaw4yS)
-
-
-
-### Contributing
-Contact us on Discord. 
-
-[license]:https://p.aoe.top/shields/github/license/GlossMod/Gloss-Mod-Manager.svg
-[author]: https://p.aoe.top/shields/badge/Author-小莫-blue?logo=Cloudera
-[Electron]: https://p.aoe.top/shields/badge/Electron-26.2.0-47848F?logo=electron
-[vue]: https://p.aoe.top/shields/badge/Vue3-3.2.45-4FC08D?logo=vuedotjs
-[Vite]: https://p.aoe.top/shields/badge/Vite-4.0.4-646CFF?logo=vite
-[pinia]: https://p.aoe.top/shields/badge/Pinia-2.0.30-ecb732?logo=Pinia
-[typescript]: https://p.aoe.top/shields/badge/TypeScript-5.0.4-3178C6?logo=typescript
-[GitHub]: https://p.aoe.top/shields/github/stars/GlossMod/Gloss-Mod-Manager?style=social
-[version]: https://p.aoe.top/shields/github/package-json/v/GlossMod/Gloss-Mod-Manager
+你可以在[这里](https://github.com/johnsoncodehk/volar/discussions/471)了解更多关于接管模式的信息。

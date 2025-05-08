@@ -13,7 +13,7 @@ export const useSettings = defineStore('Settings', {
         ],
     }),
     getters: {
-        configFile: () => Config.configFile(),
+        // configFile: () => Config.configFile(),
     },
     actions: {
 

@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { ipcRenderer } from "electron";
+// import { ipcRenderer } from "electron";
 export const useMain = defineStore('Main', {
     state: () => ({
         leftMenu: true,
@@ -51,10 +51,11 @@ export const useMain = defineStore('Main', {
         },
         // 获取版本号
         async getVersion() {
-            let version = await ipcRenderer.invoke("get-version")
-            this.version = version[0]
-            this.webVersion = version[1].mods_version
-            return version
+            // let version = await ipcRenderer.invoke("get-version")
+            // this.version = version[0]
+            // this.webVersion = version[1].mods_version
+            // return version
+            return '2.0.0'
         },
         async sleep(time: number): Promise<void> {
             return new Promise(resolve => setTimeout(resolve, time));

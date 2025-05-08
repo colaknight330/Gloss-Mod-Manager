@@ -2,8 +2,6 @@
 
 import { useI18n } from "vue-i18n";
 import { computed } from "vue";
-import AutoUpdate from "@/components/AutoUpdate/AutoUpdate.vue"
-import BaseUser from "@/components/base/User.vue"
 const { t } = useI18n()
 
 let lists = computed(() => [
@@ -77,7 +75,6 @@ function toBottom() {
             <v-list-item v-for="item in lists" :key="item.path" :to="item.path" :prepend-icon="item.icon"
                 :title="item.title">
             </v-list-item>
-            <BaseUser></BaseUser>
         </v-list>
         <template v-slot:append>
             <v-list>
